@@ -1,0 +1,133 @@
+{% extends 'layouts/default/page.html' %}
+
+{% load staticfiles %}
+{% load bootstrap4 %}
+{% load i18n %}
+
+{% block content %}
+<style>
+  
+    .container {
+       position: relative; 
+       max-width: 800px; /* Maximum width */
+       margin: 0 auto; /* Center it */
+     }
+     
+     .container1 {
+       position: relative; 
+       max-width: 800px; /* Maximum width */
+       margin: 0 auto; /* Center it */
+     }
+     
+     .container .content {
+       position: absolute; /* Position the background text */
+       top: 0; /* At the bottom. Use top:0 to append it to the top */
+       background: rgb(0, 0, 0); /* Fallback color */
+       background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+       color: #f1f1f1; /* Grey text */
+       width: 96.2%; /* Full width */
+       padding: 20px; /* Some padding */
+       
+     }
+   
+     .column {
+       float: left;
+       width: 33.3%;
+       margin-bottom: 16px;
+       padding: 0 8px;
+     }
+     
+     @media screen and (max-width: 650px) {
+       .column {
+         width: 100%;
+         display: block;
+   
+       }
+     }
+     
+     .card {
+       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+     }
+     
+     .container2 {
+       padding: 0 16px;
+     }
+     
+     .container2::after, .row::after {
+       content: "";
+       clear: both;
+       display: table;
+     }
+</style>
+<div style="padding: 20px;">
+<br><div class="container">
+    <img src="{% static 'img/about-us1.jpeg' %}" alt="Notebook" style="width:100%;">
+    <div class="content">
+      <h1>About Us</h1>
+    </div>
+  </div><br>
+
+  <div class="container">
+        <div class="row">
+          <div class="column-66">
+            <p style="font-style:italic">
+                    <p>
+                    With social economy development, people are more and more requiring tourism. Therefore, the tourist industry should rapidly develop.
+                    <br>
+                    As various tourist information increases, it becomes more difficult to conveniently and quickly acquire the appropriate information.
+                    <br>
+                    Scenic spot recommendation in personalized tourism can effectively solve the information overloading so that the industry of tourism sustainably and healthily develops.  
+                </p>
+                <p>
+                    Access to relevant and accurate information is at the heart of tourism.
+                    <br>
+                    Overload has become such a serious issue for those seeking for appropriate information.
+                    <br>
+                    Various researches have been carried out on how to make information on tourism website more effective.
+                    <br>
+                    Intelligent globetrotting information system tries to bridge the gap between tourist and useful information.
+                    It does this by noting what a tourist perceives as relevant, in terms of personalized content pertaining to tourism products.
+                    It then shows it in this tourism websites.
+                </p><br>
+                </div>
+                <br> <br> <br><br>
+                <h1>Developed by:</h1><br>
+                <div class="row">
+                        <div class="column">
+                          <div class="card">
+                                
+                            <div class="container2">
+                              <h2>Rea Fernandes</h2><br>
+                              <p>rea.ferns10@gmail.com</p>
+                              <p><a href="mailto:rea.ferns10@gmail.com" target="_blank"><button class="btn btn-outline-dark">Contact</button></p></a>
+                            </div>
+                          </div>
+                        </div>
+                      
+                        <div class="column">
+                          <div class="card">
+                              
+                            <div class="container2">
+                              <h2>Shalini R</h2><br>
+                              <p>shalini7ram@gmail.com</p>
+                              <p><a href="mailto:shalini7ram@gmail.com" target="_blank"><button class="btn btn-outline-dark">Contact</button></p></a>
+                            </div>
+                          </div>
+                        </div>
+                      
+                        <div class="column">
+                          <div class="card">
+                               
+                            <div class="container2">
+                              <h2 >Syeda Farheen Faiyaz</h2>
+                              <p>syeda09farheen@gmail.com</p>
+                              <p><a href="mailto:syeda09farheen@gmail.com" target="_blank"><button class="btn btn-outline-dark">Contact</button></p></a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+        </div>
+      </div>
+    </div>
+    <br>
+{% endblock %}

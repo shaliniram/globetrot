@@ -1,0 +1,90 @@
+{% extends 'location/base.html' %}
+{% block content %}
+<style>
+  
+        .container {
+           position: relative; 
+           max-width: 800px; /* Maximum width */
+           margin: 0 auto; /* Center it */
+         }
+         
+         .container1 {
+           position: relative; 
+           max-width: 800px; /* Maximum width */
+           margin: 0 auto; /* Center it */
+         }
+         
+         .container .content {
+           position: absolute; /* Position the background text */
+           top: 0; /* At the bottom. Use top:0 to append it to the top */
+           background: rgb(0, 0, 0); /* Fallback color */
+           background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+           color: #f1f1f1; /* Grey text */
+           width: 96.2%; /* Full width */
+           padding: 20px; /* Some padding */
+           
+         }
+       
+         .column {
+           float: left;
+           width: 33.3%;
+           margin-bottom: 16px;
+           padding: 0 8px;
+         }
+         
+         @media screen and (max-width: 650px) {
+           .column {
+             width: 100%;
+             display: block;
+       
+           }
+         }
+         
+         .card {
+           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+         }
+         
+         .container2 {
+           padding: 0 16px;
+         }
+         
+         .container2::after, .row::after {
+           content: "";
+           clear: both;
+           display: table;
+         }
+    </style>
+<div class="container" style="margin-bottom:20px;">
+        <div class="card">
+          <center>
+        <div class="container2" >
+
+            <div class="panel panel-default">
+                <div class="panel-body" style="line-height: 25px" >
+                    {% if error_message %}
+                    <p><strong>{{ error_message }}</strong></p>
+                    {% endif %}
+                    <h3>Please select one location
+                    </h3><br>
+            
+                    {% for city in cities %}<h4>
+                    <b><option value="{{city}}">{{city}}</option></b></h4>
+                    {% endfor %}
+                    <form method="POST" action="">
+                            {% csrf_token %}
+                        <select name="location" required>
+                            {% for city in cities %}
+                            <option  value="{{city}}">{{city}}</option>
+                            {% endfor %}
+                        </select>
+                        <br>
+                        <input class="btn btn-outline-dark" style="margin: 20px" type="submit">
+                    </form>
+                </div>
+            </div>
+        </div></center>
+    </div>
+</div>
+
+
+{% endblock %}

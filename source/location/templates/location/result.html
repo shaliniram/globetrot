@@ -1,0 +1,8 @@
+{% extends 'location/base.html' %}
+{% block title %}Globetrot Login{% endblock %}
+{% block body %}
+{{loc}}
+{% for p in places %}
+<a href="https://www.google.co.in/destination?safe=strict&output=search&tra=%5B%22AMAbHIKkawnJVw3hjgtTdHBHmwCNT8S94Q:1559051675371%22,%22dubai%22,%22%22%5D&tcfs&dest_mid=/m/01f08r#dest_mid=/m/01f08r&tcfs=Ei4KCS9tLzAxZjA4chIFRHViYWkaGAoKMjAxOS0wNi0xMxIKMjAxOS0wNi0xNyAB">{{p}}</a>
+{% endfor %}
+{% endblock %}

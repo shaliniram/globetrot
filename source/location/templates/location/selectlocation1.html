@@ -1,0 +1,172 @@
+{% extends 'location/base.html' %}
+{% block content %}
+<style>
+    .container {
+         position: relative; 
+         max-width: 800px; /* Maximum width */
+         margin: 0 auto; /* Center it */
+       }
+       
+       .container1 {
+         position: relative; 
+         max-width: 800px; /* Maximum width */
+         margin: 0 auto; /* Center it */
+       }
+       
+       .container .content {
+         position: absolute; /* Position the background text */
+         top: 0; /* At the bottom. Use top:0 to append it to the top */
+         background: rgb(0, 0, 0); /* Fallback color */
+         background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+         color: #f1f1f1; /* Grey text */
+         width: 96.2%; /* Full width */
+         padding: 20px; /* Some padding */
+         
+       }
+     
+       .column {
+         float: left;
+         width: 33.3%;
+         margin-bottom: 16px;
+         padding: 0 8px;
+       }
+       
+       @media screen and (max-width: 650px) {
+         .column {
+           width: 100%;
+           display: block;
+     
+         }
+       }
+       
+       .card {
+         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+       }
+       
+       .container2 {
+         padding-left:16px;
+         padding-top: 20px;
+       }
+       
+       .container2::after, .row::after {
+         content: "";
+         clear: both;
+         display: table;
+       }
+  
+       .padtop{
+         padding-top: 20px;
+         
+       }
+  .form-group{
+    font-size: 18px;
+  }
+  
+  .radioContainer {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 15px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default radio button */
+  .radioContainer input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  /* Create a custom radio button */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+    border-radius: 50%;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .radioContainer:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the radio button is checked, add a blue background */
+  .radioContainer input:checked ~ .checkmark {
+    background-color: rgb(58, 68, 77);
+  }
+  
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the indicator (dot/circle) when checked */
+  .radioContainer input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the indicator (dot/circle) */
+  .radioContainer .checkmark:after {
+     top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+  }
+  </style>
+ 
+        <div class="card">
+        <div class="container2" >
+            
+                    {% if error_message %}
+                    <p><strong>{{ error_message }}</strong></p>
+                    {% endif %}
+                    <h4>Recommended places 
+                    </h4><br>
+                    <div class="row">
+                        <div class="column" style="display: inline-block;">
+                            
+                            <b>DESTINATIONS</b>
+                        </div>
+                        <div class="column">
+                            <b>MAPS</b>
+                        </div>
+                        <div class="column">
+                            <b>SEARCH</b>
+                        </div>
+                      </div>
+                    {% for city in cities %}
+                    
+                    <div class="row">
+                      <div class="column"  style="display: inline-block;">
+                          <b><option value="{{city}}">{{city}}</option></b>
+                      </div>
+                      <div class="column">
+                          <a target="_bank" href="https://maps.google.com/?q={{city}}"><i class="fa fa-compass" style="font-size: 26px;color: rgb(32, 92, 145);" aria-hidden="true"></i>
+                          </a>
+                      </div>
+                      <div class="column">
+                          <a target="_bank" href="https://www.google.com/search?q={{city}}"><i class="fa fa-search" style="font-size: 26px;color: rgb(32, 92, 145);"  aria-hidden="true"></i>
+                          </a>
+                      </div>
+                    </div>
+                    
+                    {% endfor %}
+                </div>
+            </div>
+        
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,43 @@
+/* Hi there */
+.subDiv1, .subDiv2, .subDiv3, .subDiv4, .subDiv5, .subDiv6, .subDiv7, .subDiv8 {
+    width: 12%;
+    height: 325px;
+    border-width: 0px;
+    /*border-color: #000;*/
+    border-style: solid;
+    box-sizing:border-box;
+}
+.subDiv1 {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    float: left;
+}
+.subDiv2 {
+    float: left;
+}
+.subDiv3 {
+  float: left;
+}
+.subDiv4 {
+  float: left;
+}
+.subDiv5 {
+  float: left;
+}
+.subDiv6 {
+  float: left;
+}
+.subDiv7 {
+  float: left;
+}
+.subDiv8 {
+  border-top-right-radius: 10px;
+   border-bottom-right-radius: 10px;
+  float: left;
+}
+
+.first-info{
+    width: 100%;
+    height: 300px;
+    background-image: url( "{% static 'img/bg.jpg' %}");
+}

@@ -1,0 +1,93 @@
+{% extends 'layouts/default/page.html' %}
+
+{% load bootstrap4 %}
+{% load i18n %}
+
+{% block content %}
+<style>
+  
+        .container {
+           position: relative; 
+           max-width: 800px; /* Maximum width */
+           margin: 0 auto; /* Center it */
+         }
+         
+         .container1 {
+           position: relative; 
+           max-width: 800px; /* Maximum width */
+           margin: 0 auto; /* Center it */
+         }
+         
+         .container .content {
+           position: absolute; /* Position the background text */
+           top: 0; /* At the bottom. Use top:0 to append it to the top */
+           background: rgb(0, 0, 0); /* Fallback color */
+           background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+           color: #f1f1f1; /* Grey text */
+           width: 96.2%; /* Full width */
+           padding: 20px; /* Some padding */
+           
+         }
+       
+         .column {
+           float: left;
+           width: 33.3%;
+           margin-bottom: 16px;
+           padding: 0 8px;
+         }
+         
+         @media screen and (max-width: 650px) {
+           .column {
+             width: 100%;
+             display: block;
+       
+           }
+         }
+         
+         .card {
+           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+         }
+         
+         .container2 {
+           padding: 0 16px;
+         }
+         
+         .container2::after, .row::after {
+           content: "";
+           clear: both;
+           display: table;
+         }
+    </style>
+<div class="container" style="margin-bottom:20px;">
+        <div class="card">
+        <div class="container2" >
+        
+    <h4>{% trans 'Log in' %}</h4>
+
+    <form method="post">
+
+        {% csrf_token %}
+        {% bootstrap_form form %}
+<center>
+        <button class="btn btn-outline-dark" >{% trans 'Log in' %}</button>
+    </center>
+    </form>
+
+    <hr>
+
+    <ul>
+        <li>
+            <a href="{% url 'accounts:restore_password' %}">{% trans 'Forgot your password?' %}</a>
+        </li>
+        <li>
+            <a href="{% url 'accounts:remind_username' %}">{% trans 'Forgot your username?' %}</a>
+        </li>
+        <li>
+            <a href="{% url 'accounts:resend_activation_code' %}">{% trans 'Resend an activation code' %}</a>
+        </li>
+    </ul>
+</div>
+</div>
+</div>
+
+{% endblock %}

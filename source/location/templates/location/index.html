@@ -1,0 +1,24 @@
+{% extends 'location/base.html' %}
+{% block title %}Globetrot Login{% endblock %}
+{% block body %}
+
+<div class="selectlocation-container container-fluid">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="panel panel-default">
+                <div class="panel-body" style="display: inline">
+                    {% if error_message %}
+                    <p><strong>{{ error_message }}</strong></p>
+                    {% endif %}
+                    {% if places %}
+                    {% for p in places %}
+                    <p><strong>{{ p }}</strong></p>
+                    {% endfor %}
+                    {% endif %}
+                    <h3><option value="{{loc}}">{{loc}}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
